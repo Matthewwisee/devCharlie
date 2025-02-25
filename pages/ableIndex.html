@@ -1,0 +1,116 @@
+<xmp>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calorie Tracking App</title>
+
+<!-- Import Google Fonts -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
+
+  ul {
+    font-family: "Radley", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-color: #BDBDBD;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-family: "Radley", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    text-shadow: 2px 2px 3.5px;
+  }
+
+  #description {
+    text-align: center;
+    font-family: "Radley", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  li {
+    font-size: 1.8em;
+    list-style-type: none;
+    border: solid;
+  }
+
+  img {
+    max-width: 500px;
+    height: auto;
+  }
+</style>
+
+<!-- Optional: Include Bootstrap for styling (CSS) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container my-4">
+  <h1>
+    <a href="https://en.wikipedia.org/wiki/Calorie" target="_blank">Calorie</a> Tracking
+  </h1>
+
+  <p id="description">
+    This is a calorie tracking app. See calorie tracking tips
+    <a href="https://www.webmd.com/diet/features/dos-donts-counting-calories" target="_blank">here</a>.
+  </p>
+
+  <!-- List of saved calorie data -->
+  <ul class="list-group">
+    <li class="list-group-item">
+      <!-- Get new calorie input -->
+      <form>
+        <label for="dateTracked">Date:</label>
+        <input id="dateTracked" type="date" placeholder="enter today's date" class="form-control"><br>
+
+        <label for="calorieAmount">Enter calories:</label><br>
+        <textarea id="calorieAmount" rows="4" cols="50" class="form-control"></textarea><br>
+
+        <button id="saveCalories" class="btn btn-outline-primary mt-2">Save Calories</button>
+      </form>
+    </li>
+
+    <li id="firstLog" class="list-group-item">1/17/25 | 2111 Calories</li>
+    <li id="secondLog" class="list-group-item">1/16/25 | 2532 Calories</li>
+  </ul>
+
+  <img src="https://raw.githubusercontent.com/Matthewwisee/images/main/pexels-leonardho-1552252.jpg" alt="wireframe" class="img-fluid mt-4">
+
+  <p id="rickRoll" class="mt-4">TO GET BIG MUSCLES GO <a href="https://youtu.be/dQw4w9WgXcQ?si=iTuAeAt4WY9KW8Z7" target="_blank">HERE</a> 🦭</p>
+</div>
+
+<!-- Optional: Include Bootstrap JS for functionality (optional for this layout) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    //code goes here 
+
+    $("#saveCalories").on("click", function(){
+      //call f/n
+      let statusText = underConstruction("not ready");  //update the status
+      $("#saveCalories").text(statusText).prop("disabled", true);
+    });
+
+    function underConstruction(status){
+      return "not yet ready, bruh";
+    };
+  });
+</script>
+</body>
+
+</html>
+</xmp>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>10th Planet Layout</title>
+  
+  <!-- Importing "Outfit" font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+    #title{
+      text-align: center;
+    }
+
+    #gym {
+      height: 800px; 
+      width: 800px; 
+      background-color: #CCC; 
+      margin: auto;
+      font-family: "Outfit", serif;
+    }
+
+    #mascot {
+      font-size: 50px;
+      position: relative;
+      left: 275px;
+      top: 50px;
+      rotate: 180deg;
+      display: inline-block;  
+    }
+
+    #mat {
+      height: 400px;
+      width: 600px;
+      background-color: #1E88E5;
+      position: relative;
+      top: 75px;
+      border-style: solid;
+      border-color: #212121;
+      border-width: 5px;
+      text-align: center;
+    }
+
+    #counter {
+      height: 175px;
+      width: 75px;
+      background-color: #81654f;
+      position: relative; 
+      left: 125px;
+      top: 150px;
+    }
+
+    #secondCounter {
+      height: 75px;
+      width: 200px;
+      background-color: #81654f;
+      position: relative; 
+      top: -75px;
+      text-align: center;
+    }
+
+    .seat {
+      height: 55px;
+      width: 55px;
+      background-color: #212121;
+      display: inline-block; 
+      margin: 5px; 
+      position: relative;
+      bottom: 110px;
+      left: 350px;
+      text-align: center;
+      color: white;
+      padding: 11px;
+    }
+
+    .bag {
+      height: 40px;
+      width: 40px;
+      background-color: #212121;
+      border-radius: 50%;
+      position: relative;
+      margin: 5px; 
+      top: 40px;
+      text-align: center;
+      color: white;
+      padding: 6px;
+    }
+
+    #wireframe, #nuChecker {
+      padding-left: 25px;
+    }
+  </style>
+
+  <!-- Include Bootstrap -->
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1 id="title">This is a layout of 10th Planet Muscle Shoals.</h1>
+  </header>
+
+  <main>
+    <div id="gym">
+      <div id="mat"><b>Mat</b></div>
+      <div id="counter"></div>
+      <div id="secondCounter"><b>Counter</b></div>
+      <div id="mascot">🦭</div>
+    </div>
+
+    <p id="wireframe">Here is my
+      <a href="https://raw.githubusercontent.com/Matthewwisee/devBaker/refs/heads/main/devBakerWireframe.png" target="_blank">wireframe.</a>
+    </p>
+    <p id="nuChecker">Here is my
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fmatthewwisee.github.io%2FdevBaker%2F" target="_blank">Nu Checker.</a>
+    </p>
+  </main>
+
+  <!-- Include jQuery and jQuery UI for draggable functionality -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'></script>
+  
+  <!-- Custom script -->
+  <script>
+    $(document).ready(function() {
+      console.log("ready!");
+
+      // Add seats to the gym
+      for (i = 0; i < 5; i++) {
+          console.log(i); 
+          $("#gym").append('<div class="seat">Seat</div>');
+      }
+
+      // Add bags to the mat
+      for (i = 0; i < 4; i++) {
+          console.log(i); 
+          $("#mat").append('<div class="bag">Bag</div>');
+      }
+
+      // Make the mascot draggable within the gym
+      $('#mascot').draggable({
+        containment: "#gym"
+      }); 
+    });
+
+    $(document).on('click', '#mascot', (event) => {
+      // Logging mascot's position when clicked
+      let $clicked = $('#'+event.target.id);  
+      console.log(event.target.id, 
+        $('#'+event.target.id).position().left);
+    });
+  </script>
+</body>
+
+</html>
