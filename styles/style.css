@@ -1,1 +1,16 @@
-/* // some style */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+body{
+    font-family: "Outfit", serif;
+}
+
+h1 { 
+    Text-align: center;
+    font-size: 35px;
+}
+
+footer {
+    text-align: center;
+    padding: 2px;
+}
